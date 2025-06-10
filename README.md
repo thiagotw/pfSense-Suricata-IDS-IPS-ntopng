@@ -55,12 +55,13 @@ Once installed, go to Services > ntopng and start the service.
 
 2. Enable syslog output in Suricata
 Edit the Suricata configuration file (suricata.yaml) and enable syslog logging:
-
+```bash
 eve-log:
   enabled: yes
   filetype: syslog
   ip_version: 4
   interface: default
+```
 
 Restart Suricata to apply the changes:
 systemctl restart suricata
@@ -84,6 +85,7 @@ Now, Suricata alerts and firewall logs will be displayed in graphical format.
 
 #### ntopng Dashboard:
 <img src="https://www.ntop.org/guides/ntopng/user_interface/network_interface/dashboard/dashboard.html" width="600"/>
+
 
 Benefits of This Integration
 ✅ Real-time monitoring of IDS/IPS and firewall alerts. 
