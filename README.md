@@ -87,7 +87,7 @@ Navigate to Interfaces > Settings and select the syslog interface.
 Now, Suricata alerts and firewall logs will be displayed in graphical format.
 
 #### ntopng Dashboard:
-<img src="https://www.ntop.org/guides/ntopng/user_interface/network_interface/dashboard/dashboard.html](https://www.ntop.org/guides/ntopng/_images/web_gui_dashboard_community.png" width="600"/>
+
 
 
 Benefits of This Integration
