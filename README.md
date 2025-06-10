@@ -1,4 +1,4 @@
-# pfSense & Suricata IDS/IPS
+# pfSense & Suricata IDS/IPS + ntopng
 > I built this lab to gain practical experience configuring and managing a firewall and IDS/IPS, specifically to understand how network threats are detected, logged, and prevented in real time. I began by experimenting with firewall rules in pfSense to understand how traffic is allowed or denied. Once I was comfortable with that, I moved on to configuring alerts and blocking suspicious traffic using Suricata. > > My goal was not only to become comfortable navigating alert logs, tuning rule sets, and simulating real-world traffic but also to develop a cost-effective security solution that could be implemented in a medium-sized company with limited resources for cybersecurity. By optimizing firewall rules and IDS/IPS configurations, I aimed to create a practical and affordable security setup that enhances network protection without requiring significant financial investment. 
 
 ## Tools & Technologies Used
