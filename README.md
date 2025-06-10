@@ -69,16 +69,19 @@ systemctl restart suricata
 3. Configure ntopng to receive Suricata logs
 Edit the ntopng configuration file (ntopng.conf) and add the syslog input:
 
+```bash
 -i=syslog://127.0.0.1:5140
 -i=eth1
-
+```
 Restart ntopng to apply the changes:
 
 systemctl restart ntopng
 
 4. Access ntopng’s Web Interface
-Open a browser and go to http://<pfSense-IP>:3000.
 
+```bash   
+Open a browser and go to http://<pfSense-IP>:3000.
+```
 Navigate to Interfaces > Settings and select the syslog interface.
 
 Now, Suricata alerts and firewall logs will be displayed in graphical format.
