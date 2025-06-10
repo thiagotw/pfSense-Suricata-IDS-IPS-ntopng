@@ -90,6 +90,7 @@ Now, Suricata alerts and firewall logs will be displayed in graphical format.
 <img src="https://raw.githubusercontent.com/thiagotw/pfSense-Suricata-IDS-IPS-ntopng/main/ntopngweb_gui_dashboard_enterprise.png" width="600"/>
 
 Benefits of This Integration
+
 ✅ Real-time monitoring of IDS/IPS and firewall alerts.
 
 ✅ Interactive dashboards for threat analysis.
