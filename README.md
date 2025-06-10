@@ -1,5 +1,5 @@
-# pfSense & Suricata IDS/IPS Lab
-I built this lab to gain practical experience configuring and managing a firewall and IDS/IPS, specifically to understand how network threats are detected, logged, and prevented in real time. I began by experimenting with firewall rules in pfSense to understand how traffic is allowed or denied. Once I was comfortable with that, I moved on to configuring alerts and blocking suspicious traffic using Suricata. My goal was to become comfortable navigating alert logs, tuning rule sets, and simulating real-world traffic to better understand how to monitor and respond to potential intrusions. 
+# pfSense & Suricata IDS/IPS
+> I built this lab to gain practical experience configuring and managing a firewall and IDS/IPS, specifically to understand how network threats are detected, logged, and prevented in real time. I began by experimenting with firewall rules in pfSense to understand how traffic is allowed or denied. Once I was comfortable with that, I moved on to configuring alerts and blocking suspicious traffic using Suricata. > > My goal was not only to become comfortable navigating alert logs, tuning rule sets, and simulating real-world traffic but also to develop a cost-effective security solution that could be implemented in a medium-sized company with limited resources for cybersecurity. By optimizing firewall rules and IDS/IPS configurations, I aimed to create a practical and affordable security setup that enhances network protection without requiring significant financial investment. 
 
 ## Tools & Technologies Used
 
@@ -10,6 +10,7 @@ I built this lab to gain practical experience configuring and managing a firewal
 - pfSense (Firewall)
 - Suricata (IDS/IPS)
   - Emerging Threats Rule Set
+  - ntopng collects and visualizes these alerts, displaying them in interactive dashboards and help to buildup the pdf reports.
 
 ## What This Lab Does
 - Sets up pfSense as the primary firewall and router within a virtual or physical home lab environment.
@@ -45,5 +46,51 @@ Then, I configured my Suricata IPS to block malicious activity.
 
 #### hping3 (Blocked by IPS):
 
+#### ntopng Graphical interface for alerts
+
+1. Install ntopng on pfSense
+Go to System > Package Manager > Available Packages.
+
+Once installed, go to Services > ntopng and start the service.
+
+2. Enable syslog output in Suricata
+Edit the Suricata configuration file (suricata.yaml) and enable syslog logging:
+
+eve-log:
+  enabled: yes
+  filetype: syslog
+  ip_version: 4
+  interface: default
+
+Restart Suricata to apply the changes:
+systemctl restart suricata
+
+3. Configure ntopng to receive Suricata logs
+Edit the ntopng configuration file (ntopng.conf) and add the syslog input:
+
+-i=syslog://127.0.0.1:5140
+-i=eth1
+
+Restart ntopng to apply the changes:
+
+systemctl restart ntopng
+
+4. Access ntopng’s Web Interface
+Open a browser and go to http://<pfSense-IP>:3000.
+
+Navigate to Interfaces > Settings and select the syslog interface.
+
+Now, Suricata alerts and firewall logs will be displayed in graphical format.
+
+#### ntopng Dashboard:
+<img src="https://www.ntop.org/guides/ntopng/user_interface/network_interface/dashboard/dashboard.html" width="600"/>
+
+Benefits of This Integration
+✅ Real-time monitoring of IDS/IPS and firewall alerts. 
+✅ Interactive dashboards for threat analysis. 
+✅ Cost-effective security solution for medium-sized businesses with limited cybersecurity budgets.
+
 ## Lessons Learned
-Throughout this experience, I learned many things. I learned how to build and manage firewall rules, monitor traffic, and how to configure intrusion detection and prevention systems. This helped me understand how security teams use these tools to protect networks against real-world threats. I also became more confident using tools like Suricata, pfSense, and Wireshark.
+Throughout this experience, I learned many things. I gained practical knowledge in building and managing firewall rules, monitoring network traffic, and configuring intrusion detection and prevention systems. This helped me understand how security teams use these tools to protect networks against real-world threats.
+
+Additionally, I focused on developing a cost-effective security solution that could be implemented in a medium-sized company with limited financial resources for cybersecurity. By optimizing firewall rules and IDS/IPS configurations, I learned how to enhance network protection without requiring significant investment in expensive security solutions. This experience gave me confidence in using tools like Suricata, pfSense, and Wireshark to create a practical and affordable security setup that can be deployed in resource-constrained environments.
