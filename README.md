@@ -87,7 +87,7 @@ Navigate to Interfaces > Settings and select the syslog interface.
 Now, Suricata alerts and firewall logs will be displayed in graphical format.
 
 #### ntopng Dashboard:
-[<img src="https://github.com/thiagotw/pfSense-Suricata-IDS-IPS-ntopng/blob/main/images/ntopngweb_gui_dashboard_enterprise.png" width="600"/>](https://github.com/thiagotw/pfSense-Suricata-IDS-IPS-ntopng/blob/main/ntopngweb_gui_dashboard_enterprise.png
+<img src="https://github.com/thiagotw/pfSense-Suricata-IDS-IPS-ntopng/blob/main/images/ntopngweb_gui_dashboard_enterprise.png" width="600"/>](https://github.com/thiagotw/pfSense-Suricata-IDS-IPS-ntopng/blob/main/ntopngweb_gui_dashboard_enterprise.png
 )
 
 Benefits of This Integration
